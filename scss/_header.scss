@@ -1,0 +1,34 @@
+.header{
+    @include widhei(100%, auto);
+    @include marpad (0, 10px);
+    @include justali(space-between, center);
+    @include pos (fixed, 0, 0);
+    @include dis (flex);
+    &__search{
+        &--button{
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            &--img{
+                @include widhei(38px, 38px);
+                color: white;
+            }
+        }
+    }
+    &__logo{
+        h1{
+            @include texts(28px, 700, white)
+        }
+    }
+    &__menu{
+        &--button{
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            &--img{
+                @include widhei(45px, 45px);
+                color: white;
+            }
+        }
+    }
+}
