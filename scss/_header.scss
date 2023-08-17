@@ -2,8 +2,9 @@
     @include widhei(100%, auto);
     @include marpad (0, 10px);
     @include justali(space-between, center);
-    @include pos (fixed, 0, 0);
+    @include pos (sticky, 0, 0);
     @include dis (flex);
+    transition: all 0.3s ease-in-out;
     &__search{
         &--button{
             background-color: transparent;
@@ -31,4 +32,8 @@
             }
         }
     }
+}
+
+.nav-hidden{
+    transform: translateY(-100px);
 }
