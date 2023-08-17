@@ -1,17 +1,16 @@
 const header = document.getElementById('mainHeader');
-let currentScrollY = 0;
-let lastScrollY = 0;
+let actualScroll = 0;
+let ultimoScroll = 0;
 
-const handleScroll = () => {
-    currentScrollY = window.scrollY;
+const scrollHideNav = () => {
+    actualScroll = window.scrollY;
 
-    if (currentScrollY > lastScrollY + 10) {
+    if (actualScroll > ultimoScroll + 10) {
         header.classList.add('nav-hidden');
-    } else if (currentScrollY < lastScrollY - 10) {
+    } else if (actualScroll < ultimoScroll - 5) {
         header.classList.remove('nav-hidden');
     }
-
-    lastScrollY = currentScrollY;
+    ultimoScroll = actualScroll;
 };
 
-window.addEventListener('scroll', handleScroll);
+window.onscroll = scrollHideNav;
