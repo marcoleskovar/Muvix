@@ -1,14 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&family=Abril+Fatface&display=swap&family=Carter+One&display=swap&family=Righteous&display=swap&family=Pacifico&display=swap&family=Bagel+Fat+One&family=Fjalla+One&family=Oswald:wght@200;300;400;500;600;700&family=Rammetto+One&family=Shrikhand&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  background-color: rgb(47, 47, 47);
+  background-color: rgb(29, 29, 29);
 }
 
 /* DISPLAY */
@@ -28,13 +30,14 @@ html {
   width: 100%;
   height: auto;
   margin: 0;
-  padding: 10px;
+  padding: 10px 10px 20px 10px;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
   left: 0;
   display: flex;
+  background: linear-gradient(180deg, rgb(29, 29, 29) 0%, rgb(29, 29, 29) 11%, rgb(29, 29, 29) 21%, rgb(29, 29, 29) 31%, rgb(29, 29, 29) 39%, rgb(29, 29, 29) 46%, rgb(29, 29, 29) 51%, rgb(29, 29, 29) 59%, rgb(29, 29, 29) 74%, rgba(29, 29, 29, 0.9612219888) 78%, rgba(29, 29, 29, 0.9416141457) 80%, rgba(29, 29, 29, 0.9304096639) 82%, rgba(29, 29, 29, 0.8631827731) 85%, rgba(29, 29, 29, 0.5102415966) 93%, rgba(29, 29, 29, 0.2049194678) 96%, rgba(29, 29, 29, 0.1236869748) 98%, rgba(29, 29, 29, 0) 100%);
   transition: all 0.3s ease-in-out;
 }
 .header__search--button {
@@ -43,8 +46,8 @@ html {
   cursor: pointer;
 }
 .header__search--button--img {
-  width: 38px;
-  height: 38px;
+  width: 28px;
+  height: 28px;
   color: white;
 }
 .header__logo h1 {
@@ -53,18 +56,127 @@ html {
   color: white;
 }
 .header__menu--button {
-  background-color: transparent;
-  border: none;
+  padding: 3px 0;
   cursor: pointer;
 }
-.header__menu--button--img {
-  width: 45px;
-  height: 45px;
-  color: white;
+.header__menu--button .bar {
+  width: 26px;
+  height: 3px;
+  margin: 5px 0;
+  display: block;
+  border-radius: 50px;
+  background-color: rgb(255, 255, 255);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.header__menu--button.menu-open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.header__menu--button.menu-open .bar:nth-child(2) {
+  opacity: 0;
+  transition: all 0.01s ease-in-out;
+}
+.header__menu--button.menu-open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .nav-hidden {
   transform: translateY(-100px);
+}
+
+.nav {
+  width: 100%;
+  height: 100vh;
+  padding: 20px 10px;
+  justify-content: center;
+  align-items: start;
+  position: fixed;
+  top: 58px;
+  left: 0;
+  display: flex;
+  background-color: rgba(29, 29, 29, 0.899);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0.1s linear;
+}
+.nav__container {
+  width: 100%;
+  height: 100%;
+}
+.nav__container--account {
+  width: 100%;
+  margin: 15px 0 20px 0;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.nav__container--account--btn {
+  padding: 7px 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 2px solid rgb(16, 113, 232);
+  border-radius: 30px;
+}
+.nav__container--account--btn--icon {
+  width: 35px;
+  height: 35px;
+  justify-content: center;
+  align-items: start;
+  color: rgb(16, 113, 232);
+}
+.nav__container--account--btn--text {
+  margin: 0 10px;
+  font-size: 2em;
+  font-weight: 400;
+  color: rgb(16, 113, 232);
+}
+.nav__container--list {
+  padding: 20px 10px;
+  justify-content: center;
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  border-radius: 10px;
+}
+.nav__container--list--items {
+  width: 100%;
+  margin: 13px;
+  padding: 8px;
+  display: flex;
+  background-image: linear-gradient(rgb(170, 170, 170), rgb(170, 170, 170));
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 80% 2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.nav__container--list--items--link {
+  width: 100%;
+  text-decoration: none;
+}
+.nav__container--list--items--link--structure {
+  padding: 5px 10px;
+  justify-content: start;
+  align-items: center;
+  display: flex;
+}
+.nav__container--list--items--link--structure--icon {
+  width: 30px;
+  color: white;
+}
+.nav__container--list--items--link--structure--text {
+  padding: 0 0 0 20px;
+  font-size: 2em;
+  font-weight: 600;
+  color: white;
+}
+
+.menu-open {
+  opacity: 1;
+  visibility: visible;
 }
 
 /*# sourceMappingURL=main.css.map */

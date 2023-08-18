@@ -1,0 +1,77 @@
+.nav{
+    @include widhei (100%, 100vh);
+    @include pad (20px 10px);
+    @include justali(center, start);
+    @include pos (fixed, 58px, 0);
+    @include dis (flex);
+    background-color: rgba(29, 29, 29, 0.899);
+    opacity: 0;
+    visibility:hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0.1s linear;
+    &__container{
+        @include widhei (100%, 100%);
+        &--account{
+            @include wid (100%);
+            @include marpad (15px 0 20px 0, 10px);
+            @include justali (center, center);
+            @include dis (flex);
+            &--btn{
+                @include pad (7px 10px);
+                @include justali(center, center);
+                @include dis (flex);
+                border: 2px solid rgb(16, 113, 232);
+                border-radius: 30px;
+                &--icon{
+                    @include widhei (35px, 35px);
+                    @include justali(center, start);
+                    color: rgb(16, 113, 232);
+                }
+                &--text{
+                    @include mar (0 10px);
+                    @include texts (2em, 400, rgb(16, 113, 232));
+                }
+            }
+        }
+        &--list{
+            @include pad (20px 10px);
+            @include justali(center, start);
+            @include dis (flex);
+            @include flex (col);
+            list-style: none;
+            border-radius: 10px;
+            &--items{
+                @include wid (100%);
+                @include marpad (13px, 8px);
+                @include dis (flex);
+                background-image: linear-gradient(rgb(170, 170, 170), rgb(170, 170, 170));
+                background-position: 0% 100%;
+                background-repeat: no-repeat;
+                background-size: 80% 2px;
+                border-radius: 5px;
+                cursor: pointer;
+                &--link{
+                    @include wid (100%);
+                    text-decoration: none;
+                    &--structure{
+                        @include pad (5px 10px);
+                        @include justali (start, center);
+                        @include dis (flex);
+                        &--icon{
+                            @include wid (30px);
+                            color: white;
+                        }
+                        &--text{
+                            @include pad (0 0 0 20px);
+                            @include texts (2em, 600, white);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menu-open{
+    opacity: 1;
+    visibility:visible;
+}

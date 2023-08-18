@@ -1,9 +1,10 @@
 .header{
     @include widhei(100%, auto);
-    @include marpad (0, 10px);
+    @include marpad (0, 10px 10px 20px 10px);
     @include justali(space-between, center);
     @include pos (sticky, 0, 0);
     @include dis (flex);
+    background: linear-gradient(180deg, rgba(29, 29, 29) 0%, rgba(29, 29, 29) 11%, rgba(29, 29, 29,1) 21%, rgba(29, 29, 29,1) 31%, rgba(29, 29, 29,1) 39%, rgba(29, 29, 29,1) 46%, rgba(29, 29, 29,1) 51%, rgba(29, 29, 29,1) 59%, rgba(29, 29, 29,1) 74%, rgba(29, 29, 29,0.9612219887955182) 78%, rgba(29, 29, 29,0.9416141456582633) 80%, rgba(29, 29, 29,0.9304096638655462) 82%, rgba(29, 29, 29,0.8631827731092436) 85%, rgba(29, 29, 29,0.5102415966386555) 93%, rgba(29, 29, 29,0.2049194677871149) 96%, rgba(29, 29, 29,0.12368697478991597) 98%, rgba(29, 29, 29,0) 100%);
     transition: all 0.3s ease-in-out;
     &__search{
         &--button{
@@ -11,7 +12,7 @@
             border: none;
             cursor: pointer;
             &--img{
-                @include widhei(38px, 38px);
+                @include widhei(28px, 28px);
                 color: white;
             }
         }
@@ -23,12 +24,28 @@
     }
     &__menu{
         &--button{
-            background-color: transparent;
-            border: none;
+            @include pad(3px 0);
             cursor: pointer;
-            &--img{
-                @include widhei(45px, 45px);
-                color: white;
+            .bar{
+                @include widhei (26px, 3px);
+                @include mar (5px 0);
+                @include dis (blo);
+                border-radius: 50px;
+                background-color: rgb(255, 255, 255);
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+            }
+            &.menu-open{
+                & .bar:nth-child(1){
+                    transform: translateY(8px) rotate(45deg);
+                }
+                & .bar:nth-child(2){
+                    opacity: 0;
+                    transition: all 0.01s ease-in-out;
+                }
+                & .bar:nth-child(3){
+                    transform: translateY(-8px) rotate(-45deg);
+                }
             }
         }
     }
