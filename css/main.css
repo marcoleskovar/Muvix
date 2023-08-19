@@ -214,7 +214,7 @@ html {
   display: flex;
 }
 .search-section__form--input {
-  width: 55%;
+  width: 100%;
   height: auto;
   font-size: 2.2em;
   font-weight: 300;
@@ -234,7 +234,7 @@ html {
 }
 .search-section__form--btn {
   padding: 0 10px;
-  display: none;
+  visibility: hidden;
   border: none;
   background-color: transparent;
   color: rgb(139, 139, 139);
@@ -244,7 +244,7 @@ html {
   height: 22px;
 }
 .search-section__form .delete-show {
-  display: flex;
+  visibility: visible;
 }
 
 .search-open {

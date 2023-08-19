@@ -20,7 +20,6 @@ openSearch()
 //SHOW AND HIDE DELETE BUTTON
 const deleteSearch = () => {
     searchBarInput.value.length ? deleteSearchBtn.classList.add('delete-show') : deleteSearchBtn.classList.remove('delete-show');
-    searchBarInput.value.length == 0 ? searchBarInput.classList.add('delete-hidden') : searchBarInput.classList.remove('delete-hidden')
     searchBarInput.oninput = deleteSearch;
 }
 

@@ -14,7 +14,7 @@
         @include justali (start, center);
         @include dis (flex);
         &--input{
-            @include widhei (55%, auto);
+            @include widhei (100%, auto);
             @include texts (2.2em, 300, white);
             @include pad (0 10px);
             line-height: 2em;
@@ -30,7 +30,7 @@
         }
         &--btn{
             @include pad (0 10px);
-            @include dis (no);
+            visibility: hidden;
             border: none;
             background-color: transparent;
             color: rgb(139, 139, 139);
@@ -39,7 +39,7 @@
             }
         }
         .delete-show{
-            @include dis (flex);
+            visibility: visible;
         }
     }
 }
