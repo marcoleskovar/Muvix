@@ -1,4 +1,5 @@
 const header = document.getElementById('mainHeader');
+const navBar = document.getElementById('mainNavBar')
 let actualScroll = 0;
 let lastScroll = 0;
 
