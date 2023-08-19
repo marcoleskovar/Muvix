@@ -1,12 +1,15 @@
 .header{
     @include widhei(100%, auto);
-    @include marpad (0, 10px 10px 20px 10px);
+    @include marpad (0, 15px 20px 20px);
     @include justali(space-between, center);
     @include pos (sticky, 0, 0);
     @include dis (flex);
     background: linear-gradient(180deg, rgba(29, 29, 29) 0%, rgba(29, 29, 29) 11%, rgba(29, 29, 29,1) 21%, rgba(29, 29, 29,1) 31%, rgba(29, 29, 29,1) 39%, rgba(29, 29, 29,1) 46%, rgba(29, 29, 29,1) 51%, rgba(29, 29, 29,1) 59%, rgba(29, 29, 29,1) 74%, rgba(29, 29, 29,0.9612219887955182) 78%, rgba(29, 29, 29,0.9416141456582633) 80%, rgba(29, 29, 29,0.9304096638655462) 82%, rgba(29, 29, 29,0.8631827731092436) 85%, rgba(29, 29, 29,0.5102415966386555) 93%, rgba(29, 29, 29,0.2049194677871149) 96%, rgba(29, 29, 29,0.12368697478991597) 98%, rgba(29, 29, 29,0) 100%);
     transition: all 0.3s ease-in-out;
     &__search{
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.2s ease-in-out, visibility 0.1s linear;
         &--button{
             background-color: transparent;
             border: none;
@@ -32,8 +35,8 @@
                 @include dis (blo);
                 border-radius: 50px;
                 background-color: rgb(255, 255, 255);
-                -webkit-transition: all 0.3s ease-in-out;
-                transition: all 0.3s ease-in-out;
+                -webkit-transition: all 0.2s ease-in-out;
+                transition: all 0.2s ease-in-out;
             }
             &.menu-open{
                 & .bar:nth-child(1){
@@ -53,4 +56,9 @@
 
 .nav-hidden{
     transform: translateY(-100px);
+}
+
+.search-hidden{
+    opacity: 0;
+    visibility: hidden;
 }

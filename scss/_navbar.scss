@@ -21,6 +21,7 @@
                 @include dis (flex);
                 border: 2px solid rgb(16, 113, 232);
                 border-radius: 30px;
+                cursor: pointer;
                 &--icon{
                     @include widhei (35px, 35px);
                     @include justali(center, start);
@@ -46,7 +47,7 @@
                 background-image: linear-gradient(rgb(170, 170, 170), rgb(170, 170, 170));
                 background-position: 0% 100%;
                 background-repeat: no-repeat;
-                background-size: 80% 2px;
+                background-size: 60% 2px;
                 border-radius: 5px;
                 cursor: pointer;
                 &--link{

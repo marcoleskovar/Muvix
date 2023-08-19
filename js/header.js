@@ -1,12 +1,14 @@
-//ESCONDER Y MOSTRAR HEADER CON SCROLL
 const header = document.getElementById('mainHeader');
 let actualScroll = 0;
-let ultimoScroll = 0;
+let lastScroll = 0;
 
+//HIDE AND SHOW HEADER WHEN SCROLLING
 const scrollHideHeader = () => {
-    actualScroll = window.scrollY;
-    actualScroll > ultimoScroll + 10 ? header.classList.add('nav-hidden') : (actualScroll < ultimoScroll - 5 ? header.classList.remove('nav-hidden') : false)
-    ultimoScroll = actualScroll; 
+    if (!navBar.classList.contains('menu-open')){
+        actualScroll = window.scrollY;
+        actualScroll > lastScroll + 10 ? header.classList.add('nav-hidden') : (actualScroll < lastScroll - 5 ? header.classList.remove('nav-hidden') : false)
+        lastScroll = actualScroll; 
+    }
 };
 
-window.onscroll = scrollHideNav;
+window.onscroll = scrollHideHeader;

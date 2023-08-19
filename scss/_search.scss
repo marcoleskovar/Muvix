@@ -1,0 +1,54 @@
+.search-section{
+    @include widhei (100%, 100vh);
+    @include pad (20px 10px);
+    @include justali(center, start);
+    @include pos (fixed, 58px, 0);
+    @include dis (flex);
+    background-color: rgba(29, 29, 29);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0.1s linear;
+    &__form{
+        @include wid (100%);
+        @include marpad (15px 0 20px 0, 10px);
+        @include justali (start, center);
+        @include dis (flex);
+        &--input{
+            @include widhei (55%, auto);
+            @include texts (2.2em, 300, white);
+            @include pad (0 10px);
+            line-height: 2em;
+            border: none;
+            background-color: transparent;
+        }
+        .delete-hidden{
+            @include widhei (100%, auto);
+        }
+        ::placeholder{
+            font-size: 1em;
+        }
+        &--btn{
+            @include pad (0 10px);
+            @include dis (no);
+            border: none;
+            background-color: transparent;
+            color: rgb(139, 139, 139);
+            &--icon{
+                @include widhei (22px, 22px)
+            }
+        }
+        .delete-show{
+            @include dis (flex);
+        }
+    }
+}
+
+.search-open{
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-hidden{
+    opacity: 0;
+    visibility: hidden;
+}
