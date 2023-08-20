@@ -25,6 +25,15 @@ const deleteSearch = () => {
 
 deleteSearch();
 
+//DELETE RESULTS
+const deleteResults = () => {
+    deleteSearchBtn.onclick = () => {
+        searchResults.innerHTML = ''
+    }
+}
+
+deleteResults ()
+
 //EXECUTE API SEARCH
 const searchBar = async () => {
     searchBarForm.addEventListener('submit', async (e) => {
@@ -49,16 +58,18 @@ const searchBar = async () => {
 const displayResults = (results) => {
     searchResults.innerHTML = '';
 
-    
-
-    const ul = document.createElement('ul');
+    const list = document.createElement('ul');
     results.forEach(result => {
-        const li = document.createElement('li');
-        li.textContent = result.title;
-        ul.appendChild(li);
-    });
+        if (result.image && result.image.url) {
+            const listItem = document.createElement('li');
+            const image = document.createElement('img');
 
-    searchResults.appendChild(ul);
+            image.src = result.image.url;
+            listItem.appendChild(image);
+            list.appendChild(listItem);
+        }
+    });
+    searchResults.appendChild(list);
 };
 
 searchBar();

@@ -1,7 +1,8 @@
 .search-section{
     @include widhei (100%, 100vh);
+    @include flex (col);
     @include pad (20px 10px);
-    @include justali(center, start);
+    @include justali(start, start);
     @include pos (fixed, 58px, 0);
     @include dis (flex);
     background-color: rgba(29, 29, 29);
@@ -40,6 +41,31 @@
         }
         .delete-show{
             visibility: visible;
+        }
+    }
+    &__results{
+        @include wid (100%);
+        @include justali (center, start);
+        @include dis (grid);
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-auto-rows: auto;
+        gap: 10px;
+        ul{
+            @include marpad (0, 0);
+            @include dis (grid);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            list-style: none;
+            li{
+                @include justali (center, center);
+                @include dis (flex);
+                img{
+                    max-width: 125px;
+                    min-width: 125px;
+                    max-height: 185px;
+                    min-height: 185px;
+                }
+            }
         }
     }
 }
