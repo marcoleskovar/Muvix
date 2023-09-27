@@ -1,0 +1,32 @@
+.main-content{
+    @include widhei (100%, auto);
+    @include justali (center, start);
+    @include dis (grid);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: auto;
+    gap: 10px;
+    z-index: 1;
+    ul{
+        @include marpad (0, 0 5px 20px);
+        @include dis (grid);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        list-style: none;
+        li{
+            @include justali (center, center);
+            @include dis (flex);
+            img{
+                max-width: 100px;
+                min-width: 100px;
+                max-height: 135px;
+                min-height: 135px;
+            }
+        }
+    }
+}
+
+.hidden-fixed{
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+}

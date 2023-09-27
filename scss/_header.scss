@@ -2,10 +2,11 @@
     @include widhei(100%, auto);
     @include marpad (0, 15px 20px 20px);
     @include justali(space-between, center);
-    @include pos (sticky, 0, 0);
+    @include pos (sticky, 0px, 0px);
     @include dis (flex);
-    background: linear-gradient(180deg, rgba(29, 29, 29) 0%, rgba(29, 29, 29) 11%, rgba(29, 29, 29,1) 21%, rgba(29, 29, 29,1) 31%, rgba(29, 29, 29,1) 39%, rgba(29, 29, 29,1) 46%, rgba(29, 29, 29,1) 51%, rgba(29, 29, 29,1) 59%, rgba(29, 29, 29,1) 74%, rgba(29, 29, 29,0.9612219887955182) 78%, rgba(29, 29, 29,0.9416141456582633) 80%, rgba(29, 29, 29,0.9304096638655462) 82%, rgba(29, 29, 29,0.8631827731092436) 85%, rgba(29, 29, 29,0.5102415966386555) 93%, rgba(29, 29, 29,0.2049194677871149) 96%, rgba(29, 29, 29,0.12368697478991597) 98%, rgba(29, 29, 29,0) 100%);
+    background: linear-gradient(180deg, rgba(29, 29, 29) 0%, rgba(29, 29, 29) 10%, rgba(29, 29, 29,1) 20%, rgba(29, 29, 29,1) 30%, rgba(29, 29, 29,1) 40%, rgba(29, 29, 29,1) 50%, rgba(29, 29, 29,1) 60%, rgba(29, 29, 29,1) 70%, rgba(29, 29, 29,1) 80%, rgba(29, 29, 29,0.7) 85%, rgba(29, 29, 29,0) 100%);
     transition: all 0.3s ease-in-out;
+    z-index: 1000000;
     &__search{
         opacity: 1;
         visibility: visible;
@@ -16,13 +17,13 @@
             cursor: pointer;
             &--img{
                 @include widhei(28px, 28px);
-                color: white;
+                color: rgb(255, 255, 255);
             }
         }
     }
     &__logo{
         h1{
-            @include texts(28px, 700, white)
+            @include texts(28px, 700, rgb(255, 255, 255))
         }
     }
     &__menu{
@@ -61,4 +62,8 @@
 .search-hidden{
     opacity: 0;
     visibility: hidden;
+}
+
+.fixed-pos{
+    position: fixed;
 }

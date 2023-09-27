@@ -1,16 +1,13 @@
-const header = document.getElementById('mainHeader')
-const navBar = document.getElementById('mainNavBar')
-const searchBar = document.getElementById('mainSearchBar')
 let actualScroll = 0;
 let lastScroll = 0;
 
 //HIDE AND SHOW HEADER WHEN SCROLLING
 const scrollHideHeader = () => {
-    if (!navBar.classList.contains('menu-open') && !searchBar.classList.contains('search-open')){
+    if (!mainNavBar.classList.contains('menu-open') && !mainSearchBar.classList.contains('search-open')){
         actualScroll = window.scrollY;
-        actualScroll > lastScroll + 10 ? header.classList.add('nav-hidden') : (actualScroll < lastScroll - 5 ? header.classList.remove('nav-hidden') : false)
-        lastScroll = actualScroll; 
+        actualScroll > lastScroll + 10 ? mainHeader.classList.add('nav-hidden') : (actualScroll < lastScroll - 5 ? mainHeader.classList.remove('nav-hidden') : false)
+        lastScroll = actualScroll;
     }
 };
 
-window.onscroll = scrollHideHeader;
+window.addEventListener ('scroll', scrollHideHeader)

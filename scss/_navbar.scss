@@ -8,7 +8,9 @@
     opacity: 0;
     visibility:hidden;
     transition: opacity 0.2s ease-in-out, visibility 0.1s linear;
+    overflow-y: hidden;
     &__container{
+        overflow-y: hidden;
         @include widhei (100%, 100%);
         &--account{
             @include wid (100%);
@@ -34,6 +36,7 @@
             }
         }
         &--list{
+            
             @include pad (20px 10px);
             @include justali(center, start);
             @include dis (flex);

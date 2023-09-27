@@ -1,19 +1,23 @@
 .search-section{
-    @include widhei (100%, 100vh);
+    min-height: 100vh;
+    @include widhei (100%, auto);
     @include flex (col);
-    @include pad (20px 10px);
     @include justali(start, start);
-    @include pos (fixed, 58px, 0);
+    @include pos (absolute, 0, 0);
     @include dis (flex);
     background-color: rgba(29, 29, 29);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease-in-out, visibility 0.1s linear;
+    z-index: 2;
     &__form{
-        @include wid (100%);
+        @include pos (sticky, 56px, -40px);
+        @include widhei (100%, auto);
         @include marpad (15px 0 20px 0, 10px);
         @include justali (start, center);
         @include dis (flex);
+        background-color: rgba(29, 29, 29);
+        z-index: 2;
         &--input{
             @include widhei (100%, auto);
             @include texts (2.2em, 300, white);
@@ -44,14 +48,14 @@
         }
     }
     &__results{
-        @include wid (100%);
+        @include pad (20px 10px);
+        @include widhei (100%, auto);
         @include justali (center, start);
         @include dis (grid);
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         grid-auto-rows: auto;
         gap: 10px;
         ul{
-            @include marpad (0, 0);
             @include dis (grid);
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;

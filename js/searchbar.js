@@ -1,17 +1,12 @@
 import buscadorImdb from './api.js';
 
-const searchSection = document.getElementById ('mainSearchBar')
-const searchBarForm = document.getElementById('searchBarForm');
-const searchBarInput = document.getElementById('searchBarInput');
-const searchResults = document.getElementById('searchResults');
-const menuBtn = document.getElementById ('mainMenuBtn')
-const deleteSearchBtn = document.getElementById ('deleteSearch')
-
 //OPEN AND CLOSE SEARCH
 const openSearch = () => {
     mainSearchBtn.onclick = () => {
-        searchSection.classList.toggle("search-open")
-        menuBtn.classList.toggle('menu-hidden')
+        mainSearchBar.classList.toggle("search-open")
+        mainMenuBtn.classList.toggle('menu-hidden')
+        mainHeader.classList.toggle('fixed-pos')
+        contentList.classList.toggle('hidden-fixed')
     }
 }
 
@@ -28,6 +23,7 @@ deleteSearch();
 //DELETE RESULTS
 const deleteResults = () => {
     deleteSearchBtn.onclick = () => {
+        deleteSearchBtn.classList.remove('delete-show')
         searchResults.innerHTML = ''
     }
 }
